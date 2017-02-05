@@ -1,0 +1,62 @@
+<?xml version="1.0"?>
+<PropertyList> 
+	<path>ske-range.ac</path>
+
+	<animation> 
+		<type>translate</type>
+		<object-name>P2</object-name>
+		<property>ai/models/wingman/position/x-offset</property>
+		<factor>0.00005</factor>
+		<axis> 
+		   <x>0</x>
+		   <y>0</y>
+		   <z>1</z>
+		</axis>
+	</animation>
+
+	<animation> 
+		<type>translate</type>
+		<object-name>P2</object-name>
+		<property>ai/models/wingman/position/y-offset</property>
+		<factor>0.00005</factor>
+		<axis> 
+		   <x>0</x>
+		   <y>1</y>
+		   <z>0</z>
+		</axis>
+	</animation>
+
+
+	<!-- lighting -->
+	<animation>
+	     <type>material</type>
+                <object-name>P1</object-name>
+                <object-name>P2</object-name>
+                <object-name>face</object-name>
+                <object-name>off</object-name>
+		<emission> 
+			<factor-prop>systems/electrical/outputs/instrument-lights-norm</factor-prop>
+			<red>0.7</red>
+			<green>0.3</green>
+			<blue>0.3</blue>
+		</emission>
+	</animation>
+
+  <animation>
+    <type>select</type>
+    <object-name>off</object-name>
+    <condition>
+	<not>
+	    <property>instrumentation/ske/serviceable</property>
+	</not>
+    </condition>
+  </animation>
+
+	<!--  LoD  -->
+	<animation> 
+		<type>range</type>
+		<min-m>0</min-m>
+		<max-m>10</max-m>
+	</animation>
+
+</PropertyList>

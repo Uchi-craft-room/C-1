@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<PropertyList>
+
+  <sim include="Nasal/views.xml">
+
+    <aircraft-version>1.1</aircraft-version>
+    <status>Ver.1.1</status>
+
+    <fuel-fraction>0.8</fuel-fraction>
+
+    <startup>
+      <splash-texture>Aircraft/C-1/C-1-splash.jpg</splash-texture>
+    </startup>
+
+    <sound>
+      <path archive="y">Aircraft/C-1/Sounds/C-1-sound.xml</path>
+    </sound>
+
+    <model>
+      <path archive="y">Aircraft/C-1/Models/C-1.xml</path>
+      <livery>
+        <file type="string">default</file>
+      </livery>
+    </model>
+
+    <flaps>
+      <setting>0.00</setting>
+      <setting>0.15</setting>
+      <setting>0.30</setting>
+      <setting>0.45</setting>
+      <setting>0.60</setting>
+      <setting>0.75</setting>
+      <setting>1.00</setting>
+    </flaps>
+
+   <airport>
+        <runways>
+            <start-offset-m>20</start-offset-m>
+        </runways>
+    </airport>
+
+    <multiplay>
+      <chat_display>1</chat_display>
+      <generic>
+        <int type="int">0</int>  <!-- 0 immat -->
+        <int type="int">0</int>  <!-- 1 immat -->
+        <int type="int">0</int>  <!-- 2 immat -->
+        <int type="int">0</int>  <!-- 3 immat -->
+        <int type="int">0</int>  <!-- 4 immat -->
+        <int type="int">0</int>  <!-- 5 immat -->
+        <int type="bool">0</int> <!-- 6 smoke -->
+        <int type="int">0</int>  <!-- 7 color -->
+        <float n="0" alias="/instrumentation/doors/crew/position-norm"/>
+        <float n="1" alias="/surface/speedbrake-pos-norm"/>
+      </generic>
+    </multiplay>
+
+    <help>
+      <title>C-1</title>
+      <key>
+        <name>d</name>
+        <desc>Open/Close Cargo Door</desc>
+      </key>
+      <key>
+       <name>Ctrl-B</name>
+       <desc>toggle speed brake</desc>
+      </key>
+
+      <key>
+       <name>Delete</name>
+       <desc>toggle Reverser</desc>
+      </key>
+    </help>
+
+    <menubar include="Dialogs/C-1-menu.xml"/>
+
+
+</sim>
+
+  <input>
+    <keyboard include="Nasal/C-1-keyboard.xml"/>
+  </input>
+
+ <engines>
+  <engine n="0">
+   <running>true</running>
+  </engine>
+  <engine n="1">
+   <running>true</running>
+  </engine>
+ </engines>
+
+ 
+  <nasal>
+    <doors>
+      <file>Aircraft/C-1/Nasal/doors.nas</file>
+    </doors>
+    <C-1>
+      <file>Aircraft/C-1/Nasal/electrical.nas</file>
+      <file>Aircraft/C-1/Nasal/light.nas</file>
+      <file>Aircraft/C-1/Nasal/liveries.nas</file>
+      <file>Aircraft/C-1/Nasal/immat.nas</file>
+      <file>Aircraft/C-1/Nasal/instruments.nas</file>
+      <file>Aircraft/C-1/Models/Interior/Panel/kns80/kns80.nas</file>
+      <file>Aircraft/C-1/Nasal/vhf22.nas</file>
+      <file>Aircraft/C-1/Nasal/vir32.nas</file>
+      <file>Aircraft/C-1/Nasal/light-manager.nas</file>
+      <file>Aircraft/C-1/Nasal/wiper.nas</file>
+      <file>Aircraft/C-1/Nasal/autostart.nas</file>
+    </C-1>    
+    <m877>
+     <file>Aircraft/C-1/Models/Interior/Panel/chronograph/M877.nas</file>
+   </m877>
+   <dmesw>
+       <file>Aircraft/C-1/Nasal/dmesw.nas</file>
+   </dmesw>
+   <nav_scripts>
+      <file>Aircraft/C-1/Nasal/nav_scripts.nas</file>
+   </nav_scripts>
+  </nasal>
+   
+</PropertyList>
+
+
+

@@ -1,0 +1,265 @@
+<?xml version="1.0"?>
+<PropertyList>
+
+    <path>ske.ac</path>
+
+ <animation>
+   <type>material</type>
+    <object-name>left</object-name>
+    <object-name>miner</object-name>
+    <object-name>down</object-name>
+    <object-name>enter</object-name>
+    <object-name>up</object-name>
+    <object-name>plus</object-name>
+    <object-name>right</object-name>
+     <emission> 
+      <factor-prop>systems/electrical/outputs/instrument-lights-norm</factor-prop>
+        <red>  0.7 </red>
+        <green>0.3 </green>
+        <blue> 0.3 </blue>
+      </emission>
+  </animation> 
+
+ <animation>
+   <type>material</type>
+    <object-name>left1</object-name>
+    <object-name>miner1</object-name>
+    <object-name>down1</object-name>
+    <object-name>enter1</object-name>
+    <object-name>up1</object-name>
+    <object-name>plus1</object-name>
+    <object-name>right1</object-name>
+     <emission> 
+        <red>   1 </red>
+        <green> 1 </green>
+        <blue>  1 </blue>
+      </emission>
+  </animation> 
+
+
+  <animation>
+    <type>pick</type>
+    <visible>true</visible>
+    <object-name>left</object-name>
+    <action>
+      <button>0</button>
+      <repeatable>false</repeatable>
+      <binding>
+        <command>property-adjust</command>
+        <property>ai/models/wingman/position/tgt-y-offset</property>
+        <step>-10</step>
+      </binding>
+    </action>
+  </animation>
+
+ <animation>
+    <type>select</type>
+    <object-name>left1</object-name>
+    <condition>
+     <and>
+     <property>instrumentation/ske/serviceable</property>
+     <greater-than>
+        <property>ai/models/wingman/position/tgt-y-offset_norm</property>
+        <value>1</value>
+     </greater-than>
+     </and>
+    </condition>
+  </animation>
+
+  <animation>
+    <type>pick</type>
+    <visible>true</visible>
+    <object-name>miner</object-name>
+    <action>
+      <button>0</button>
+      <repeatable>false</repeatable>
+      <binding>
+        <command>property-adjust</command>
+        <property>ai/models/wingman/position/tgt-x-offset</property>
+        <step>-10</step>
+      </binding>
+    </action>
+  </animation>
+
+ <animation>
+    <type>select</type>
+    <object-name>miner1</object-name>
+    <condition>
+     <and>
+     <property>instrumentation/ske/serviceable</property>
+     <greater-than>
+        <property>ai/models/wingman/position/tgt-x-offset_norm</property>
+        <value>1</value>
+     </greater-than>
+    </and>
+    </condition>
+  </animation>
+
+  <animation>
+    <type>pick</type>
+    <visible>true</visible>
+    <object-name>down</object-name>
+    <action>
+      <button>0</button>
+      <repeatable>false</repeatable>
+      <binding>
+        <command>property-adjust</command>
+        <property>ai/models/wingman/position/tgt-z-offset</property>
+        <step>-10</step>
+      </binding>
+    </action>
+  </animation>
+
+ <animation>
+    <type>select</type>
+    <object-name>down1</object-name>
+    <condition>
+     <and>
+     <property>instrumentation/ske/serviceable</property>
+     <greater-than>
+        <property>ai/models/wingman/position/tgt-z-offset_norm</property>
+        <value>10</value>
+     </greater-than>
+     </and>
+    </condition>
+  </animation>
+
+  <animation>
+    <type>pick</type>
+    <visible>true</visible>
+    <object-name>up</object-name>
+    <action>
+      <button>0</button>
+      <repeatable>false</repeatable>
+      <binding>
+        <command>property-adjust</command>
+        <property>ai/models/wingman/position/tgt-z-offset</property>
+        <step>10</step>
+      </binding>
+    </action>
+  </animation>
+
+ <animation>
+    <type>select</type>
+    <object-name>up1</object-name>
+    <condition>
+     <and>
+     <property>instrumentation/ske/serviceable</property>
+     <less-than>
+        <property>ai/models/wingman/position/tgt-z-offset_norm</property>
+        <value>-1</value>
+     </less-than>
+     </and>
+    </condition>
+  </animation>
+
+  <animation>
+    <type>pick</type>
+    <visible>true</visible>
+    <object-name>plus</object-name>
+    <action>
+      <button>0</button>
+      <repeatable>false</repeatable>
+      <binding>
+        <command>property-adjust</command>
+        <property>ai/models/wingman/position/tgt-x-offset</property>
+        <step>10</step>
+      </binding>
+    </action>
+  </animation>
+
+ <animation>
+    <type>select</type>
+    <object-name>plus1</object-name>
+    <condition>
+     <and>
+     <property>instrumentation/ske/serviceable</property>
+     <less-than>
+        <property>ai/models/wingman/position/tgt-x-offset_norm</property>
+        <value>-1</value>
+     </less-than>
+     </and>
+    </condition>
+  </animation>
+
+
+  <animation>
+    <type>pick</type>
+    <visible>true</visible>
+    <object-name>right</object-name>
+    <action>
+      <button>0</button>
+      <repeatable>false</repeatable>
+      <binding>
+        <command>property-adjust</command>
+        <property>ai/models/wingman/position/tgt-y-offset</property>
+        <step>10</step>
+      </binding>
+    </action>
+  </animation>
+
+ <animation>
+    <type>select</type>
+    <object-name>right1</object-name>
+    <condition>
+     <and>
+     <property>instrumentation/ske/serviceable</property>
+     <less-than>
+        <property>ai/models/wingman/position/tgt-y-offset_norm</property>
+        <value>-1</value>
+     </less-than>
+     </and>
+    </condition>
+  </animation>
+
+  <animation>
+    <type>pick</type>
+    <visible>true</visible>
+    <object-name>enter</object-name>
+    <action>
+      <button>0</button>
+      <repeatable>false</repeatable>
+      <binding>
+        <command>property-assign</command>
+        <property>ai/models/wingman/position/tgt-x-offset</property>
+        <value>-100</value>
+      </binding>
+      <binding>
+        <command>property-assign</command>
+        <property>ai/models/wingman/position/tgt-y-offset</property>
+        <value>-100</value>
+      </binding>
+      <binding>
+        <command>property-assign</command>
+        <property>ai/models/wingman/position/tgt-z-offset</property>
+        <value>0</value>
+      </binding>
+    </action>
+  </animation>
+
+ <animation>
+    <type>select</type>
+    <object-name>enter1</object-name>
+    <condition>
+       <and>
+        <property>instrumentation/ske/serviceable</property>
+        <equals>
+         <property>ai/models/wingman/position/tgt-x-offset</property>
+         <value>-100</value>
+        </equals>
+        <equals>
+         <property>ai/models/wingman/position/tgt-y-offset</property>
+         <value>-100</value>
+        </equals>
+        <equals>
+         <property>ai/models/wingman/position/tgt-z-offset</property>
+         <value>0</value>
+        </equals>
+       </and>
+    </condition>
+  </animation>
+
+</PropertyList>
+
+
+
