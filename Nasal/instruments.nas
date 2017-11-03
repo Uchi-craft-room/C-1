@@ -81,7 +81,7 @@ props.globals.getNode("/environment/aircraft-effects/splash-vector-y", 0).setInt
 props.globals.getNode("/environment/aircraft-effects/splash-vector-z", 0).setIntValue(-1);
 
 #TAT
-
+setprop("/environment/total-air-temparature-degc",0);
 setlistener("/engines/engine[0]/n1",func{
              interpolate("/environment/total-air-temparature-degc",getprop("/environment/temperature-degc")+ ((getprop("/environment/temperature-degc")+ 273) * 0.2 * (getprop("/velocities/mach") * getprop("/velocities/mach"))),5)});
 
@@ -115,12 +115,17 @@ setlistener("autopilot/settings/heading-bug-deg",func{
              interpolate("autopilot/settings/true-heading-deg",getprop("autopilot/settings/heading-bug-deg"),0)});
 
 #SKE SET(X)
-props.globals.getNode("ai/models/wingman/position/tgt-x-offset_norm", 0).setDoubleValue(0);
-props.globals.getNode("ai/models/wingman/position/tgt-y-offset_norm", 0).setDoubleValue(0);
-props.globals.getNode("ai/models/wingman/position/tgt-z-offset_norm", 0).setDoubleValue(0);
-setlistener("/engines/engine[0]/n1",func{
-             interpolate("ai/models/wingman/position/tgt-x-offset_norm",getprop("ai/models/wingman/position/x-offset")-getprop("ai/models/wingman/position/tgt-x-offset"),0)});
-setlistener("/engines/engine[0]/n1",func{
-             interpolate("ai/models/wingman/position/tgt-y-offset_norm",getprop("ai/models/wingman/position/y-offset")-getprop("ai/models/wingman/position/tgt-y-offset"),0)});
-setlistener("/engines/engine[0]/n1",func{
-             interpolate("ai/models/wingman/position/tgt-z-offset_norm",getprop("ai/models/wingman/position/z-offset")-getprop("ai/models/wingman/position/tgt-z-offset"),0)});
+setlistener("/ai/models/count",func{
+             setlistener("/ai/models/wingman/name",func{
+			            props.globals.getNode("ai/models/wingman/position/tgt-x-offset_norm", 0).setDoubleValue(0);
+                        props.globals.getNode("ai/models/wingman/position/tgt-y-offset_norm", 0).setDoubleValue(0);
+                        props.globals.getNode("ai/models/wingman/position/tgt-z-offset_norm", 0).setDoubleValue(0);
+
+                        setlistener("/engines/engine[0]/n1",func{
+                                     interpolate("ai/models/wingman/position/tgt-x-offset_norm",getprop("ai/models/wingman/position/x-offset")-getprop("ai/models/wingman/position/tgt-x-offset"),0)});
+                        setlistener("/engines/engine[0]/n1",func{
+                                     interpolate("ai/models/wingman/position/tgt-y-offset_norm",getprop("ai/models/wingman/position/y-offset")-getprop("ai/models/wingman/position/tgt-y-offset"),0)});
+                        setlistener("/engines/engine[0]/n1",func{
+                                     interpolate("ai/models/wingman/position/tgt-z-offset_norm",getprop("ai/models/wingman/position/z-offset")-getprop("ai/models/wingman/position/tgt-z-offset"),0)});
+			             });
+			  });
