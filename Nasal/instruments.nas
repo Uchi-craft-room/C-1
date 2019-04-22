@@ -129,3 +129,21 @@ setlistener("/ai/models/count",func{
                                      interpolate("ai/models/wingman/position/tgt-z-offset_norm",getprop("ai/models/wingman/position/z-offset")-getprop("ai/models/wingman/position/tgt-z-offset"),0)});
 			             });
 			  });
+
+#AUTO-SPOILER
+setlistener("gear/gear[0]/wow", func(wow_0){
+	var wow_0 = wow_0.getValue();
+	var state = getprop("controls/flight/spoiler-switch-auto");
+	if(wow_0 and state){
+		setprop("controls/flight/speedbrake",1);
+	}
+},1,0);
+
+setlistener("gear/gear[1]/wow", func(wow_1){
+	var wow_1 = wow_1.getValue();
+	var state = getprop("controls/flight/spoiler-switch-auto");
+	if(wow_1 and state){
+		setprop("controls/flight/speedbrake",1);
+	}
+},1,0);
+
