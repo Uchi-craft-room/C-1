@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+  <sim>
+    <model>
+	<livery>
+        <name type="string">68-1020_2TAG</name>
+        <texture>Liveries/68-1020_2TAG.png</texture>
+	</livery>
+	<livery-logo>
+	<texture>Liveries/68-1020_2TAG.png</texture>
+	</livery-logo>
+    </model>
+  </sim>
+</PropertyList>
+
